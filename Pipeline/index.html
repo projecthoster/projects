@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<title>RISC-16 Viewer</title>
+	
+	<script src="js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="js/raphael-min.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/Word.js"></script>
+	<script src="js/IFphase.js"></script>
+	<script src="js/IDphase.js"></script>
+	<script src="js/EXphase.js"></script>
+	<script src="js/MEMphase.js"></script>
+	<script src="js/WBphase.js"></script>
+	<script src="js/Simulator.js"></script>
+	<script src="js/Logger.js"></script>
+	<script src="js/Viewer.js"></script>
+	<script src="js/script.js"></script>
+	
+	<link href="css/style.css" rel="stylesheet"/>
+
+</head>
+
+<body onload="setDims(this);">
+<div id="wrap">
+	
+	<div id="assemblerWrap">
+		
+		<div class="page-half">
+			
+			<h1>Assembly to Machine</h1>
+			
+			<div class="input-container">
+				<input id="assemblyFile" type="file"/>
+			</div>
+			
+			<button onclick="assemble()">GO!</button>
+		
+		</div>
+		
+		<div class="page-half">
+			
+			<h1>Simulate Machine Code</h1>
+			
+			<div class="input-container">
+				
+				<div class="input-section">
+					<input id="machineFile" type="file"/>
+				</div>
+				
+				<div class="input-section">
+					<select id="logLevel" onkeypress="handle(event)">
+						<option value="-1">-1</option>
+						<option value="0" selected>0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<label for="logLevel">Logging Level</label>
+				</div>
+				
+				<div class="input-section" id="timeDelay">
+					<label>
+						Time Delay:
+						<div id="time">2.0s</div>
+						<br>
+						<input type="range" id="timeInput" min="0.5" max="5" step="0.5" value="2.0" onchange="setTime()" />
+					</label>
+				</div>
+			
+			</div>
+			
+			<button id="simulate" onclick="simulate()">GO!</button>
+		
+		</div>
+	
+	</div>
+	
+	<div id="viewer">
+		
+		<div id="viewButton" onclick="viewer.toggleView()"> &lt; </div>
+		
+		<div id="viewPaper"></div>
+		
+		<div id="pausePlay" onclick="pausePlayView()">Pause</div>
+		
+		<div id="stop" onclick="stopView()">STOP!</div>
+	
+	</div>
+	
+	<textarea name="hiddenFile" id="hiddenFile" class="hidden"></textarea>
+	<textarea name="hiddenText" id="hiddenText" class="hidden"></textarea>
+
+</div>
+</body>
+</html>

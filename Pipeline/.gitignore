@@ -1,0 +1,4 @@
+SConscript
+*.xcscheme
+bin/*
+*.o
