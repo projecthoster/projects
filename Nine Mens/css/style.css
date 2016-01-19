@@ -1,0 +1,133 @@
+/* CSS Document */
+
+body {
+    /*background-color: #182530;*/
+    overflow: hidden;
+    font-family: sans-serif;
+    background-image: url("../img/background.png");
+}
+
+.playArea {
+    width: 884px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.playArea > div {
+    float: left;
+    box-sizing: border-box;
+}
+
+.playerPieceArea {
+    width: 140px;
+    height: 100%;
+    background: rgba(256,256,256,0.35);
+    /*border: 2px solid black;*/
+    padding: 20px;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+    background: rgba(256,256,256,0.35);
+    /*border: 2px solid #0B292E;*/
+    margin: 0 2px;
+    position: relative;
+}
+
+#menuCont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    /*text-align: center;*/
+    background-color: rgba(80,80,80,.4);
+}
+
+.menuWrap {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    top: 30%;
+    position: relative;
+    
+}
+
+#gameOver {
+    display: none;
+}
+
+.menuText {
+    
+}
+
+#winnerText{ 
+    
+}
+
+#restartButton {
+    font-size: 14px;
+}
+
+#ui {
+    width: 880px;
+    height: 50px;
+    background-color: rgba(256,256,256,0.35);
+    border: 2px solid rgba(0,0,0,0.3);
+    margin: 5px auto;
+}
+
+#playerOneInfo {
+    float: left;
+}
+
+#otherInfo {
+    float: left;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+}
+
+#playerTwoInfo {
+    float: right;
+}
+
+.infoArea {
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.playerLabel {
+    font-size: 18px;
+}
+
+#graveyards {
+    width: 880px;
+    height: 64px;
+    margin: 5px auto;
+    background-color: rgba(256,256,256,0.35);
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+#graveDivider {
+    width: 2px;
+    height: 56px;
+    background-color: rgba(0,0,0,0.3);
+    margin: 4px auto;
+}
+
+/*
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+*/
+
+

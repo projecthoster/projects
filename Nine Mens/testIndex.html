@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    
+    <title>Nine Men's Morris</title>
+    
+    <script src="js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery/jquery-ui.min.js"></script>
+    <script src="js/qunit/qunit-1.19.0.js"></script>
+	
+	<!-- -->
+	<script src="js/Tests/testInclude.js"></script>
+	<!-- -->
+	
+	<script src="js/raphael-min.js"></script>
+	<script src="js/Color.js"></script>
+    <script src="js/Piece.js"></script>
+	<script src="js/AI.js"></script>
+	<script src="js/Player.js"></script>
+	<script src="js/Point.js"></script>
+	<script src="js/Line.js"></script>
+    <script src="js/Board.js"></script>
+	<script src="js/GameView.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/script.js"></script>
+     
+    <link href="css/qunit/qunit-1.19.0.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+</head>
+
+
+<body>
+
+	<div id="qunit" style="position:relative;"></div>
+	
+	<div id="ui">
+		<div id="playerOneInfo" class="infoArea">
+			<label class="playerLabel">Player 1</label>
+			
+			<div class="remainingPieces">
+				Pieces Left: <label>9</label>
+			</div>
+		
+		</div>
+		
+		<div id="otherInfo">
+			
+			<label id="currentPlayer"></label>
+			<br>
+			<label id="flying"></label>
+		
+		</div>
+		
+		
+		<div id="playerTwoInfo"  class="infoArea">
+			<label class="playerLabel">Player 2</label>
+			
+			<div class="remainingPieces">
+				Pieces Left: <label>9</label>
+			</div>
+		
+		
+		</div>
+	
+	</div>
+	
+	
+	<div class="playArea">
+		<div id="player1PieceArea" class="playerPieceArea"></div>
+		
+		<div id="board" class="board">
+		
+		
+		</div>
+		
+		<div id="player2PieceArea" class="playerPieceArea"></div>
+	</div>
+	
+	<div id="graveyards">
+		<div id="graveDivider">	</div>
+	</div>
+	
+	<div id="menuCont">
+		<div id="screenStart" class="menuWrap">
+			
+			<div class="menuText">
+				Nine Men's Morris
+			</div>
+			<br>
+			<div id="playerChoiceWrap">
+				
+				<div id="gameModeText">Player vs. Player</div>
+				
+				<label><input id="checkAI" type="checkbox" checked onchange="changeGameMode()" />AI</label>
+				<br><br>
+				<button id="startGame" onclick="startGame()">Start!</button>
+			
+			</div>
+		
+		</div>
+		
+		<div id="gameOver" class="menuWrap">
+			<div class="menuText">
+				Game Over
+			</div>
+			
+			<div id="winnerText">
+				Winner
+			</div>
+			
+			<input type="button" id="restartButton" value="Restart?" onclick="location.reload();"/>
+		</div>
+		
+		<div id="holderThingy"></div>
+	</div>
+</body>
+<script>
+</script>
+</html>
