@@ -7,25 +7,12 @@
 	
 	<script src="js/jquery/jquery-1.11.3.min.js"></script>
 	<script src="js/jquery/jquery-ui.min.js"></script>
-	<script src="js/qunit/qunit-1.19.0.js"></script>
-	
-	<script src="js/raphael-min.js"></script>
-	<script src="js/Color.js"></script>
-	<script src="js/Piece.js"></script>
-	<script src="js/AI.js"></script>
-	<script src="js/Player.js"></script>
-	<script src="js/Point.js"></script>
-	<script src="js/Line.js"></script>
-	<script src="js/Board.js"></script>
-	<script src="js/GameView.js"></script>
-	<script src="js/Game.js"></script>
-	<script src="js/script.js"></script>
-	
-	<link href="css/qunit/qunit-1.19.0.css" rel="stylesheet"/>
+
+	<script src="js/bundle.js"></script>
+
 	<link href="css/style.css" rel="stylesheet"/>
 
 </head>
-
 
 <body>
 
@@ -87,9 +74,9 @@
 			
 			<div id="gameModeText">Player vs. Player</div>
 			
-			<label><input id="checkAI" type="checkbox" onchange="changeGameMode()" />AI</label>
+			<label><input id="checkAI" type="checkbox" />AI</label>
 			<br><br>
-			<button id="startGame" onclick="startGame()">Start!</button>
+			<button id="startGame">Start!</button>
 			
 		</div>
 		
@@ -104,7 +91,7 @@
 			Winner
 		</div>
 		
-		<input type="button" id="restartButton" value="Restart?" onclick="location.reload();"/>
+		<input type="button" id="restartButton" value="Restart?"/>
 	</div>
 </div>
 
