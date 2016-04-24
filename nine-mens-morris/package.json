@@ -4,6 +4,7 @@
   "description": "A Javascript implementation of the game Nine Men's Morris",
   "main": "js/bundle.js",
   "scripts": {
+    "build": "webpack",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
