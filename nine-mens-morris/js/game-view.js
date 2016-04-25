@@ -5,8 +5,8 @@ export default class GameView {
     constructor(gameObj) {
         this.game = gameObj;
         $('#screenStart').hide();
-        $('#gameOver').show();
-        $('#menuCont').hide();
+        $('#game-over').show();
+        $('#menu-cont').hide();
         this.removingPiece = false;
 
         this.generateUIElements();
@@ -252,7 +252,7 @@ export default class GameView {
 
             var center = GameView.PIECE_AREA_WIDTH / 2;
             if (i === 1) {
-                // Adjust center to second playerPieceArea.
+                // Adjust center to second player-piece-area.
                 center += GameView.BOARD_WIDTH + GameView.PIECE_AREA_WIDTH;
             }
 
@@ -295,8 +295,8 @@ export default class GameView {
     };
 
     updateUI() {
-        $("#playerOneInfo > .remainingPieces > label").html(this.game.player1.activePieces.length);
-        $("#playerTwoInfo > .remainingPieces > label").html(this.game.player2.activePieces.length);
+        $("#player-info-one > .remainingPieces > label").html(this.game.player1.activePieces.length);
+        $("#player-info-two > .remainingPieces > label").html(this.game.player2.activePieces.length);
 
 
         var currentPlayer = this.game.activePlayer === this.game.player1 ? "Player 1" : "Player 2";
@@ -317,7 +317,7 @@ export default class GameView {
 
     gameOver() {
         this.boardPaper.remove();
-        $('#menuCont').show();
+        $('#menu-cont').show();
         // display "GAME OVER"
         // display winner ("Player 1" or "Player 2")
         // unhide restart button

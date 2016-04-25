@@ -2,98 +2,98 @@
 <html>
 
 <head>
-	
-	<title>Nine Men's Morris</title>
-	
-	<script src="js/jquery/jquery-1.11.3.min.js"></script>
-	<script src="js/jquery/jquery-ui.min.js"></script>
 
-	<script src="js/bundle.js"></script>
+    <title>Nine Men's Morris</title>
 
-	<link href="css/style.css" rel="stylesheet"/>
+    <script src="js/jquery/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery/jquery-ui.min.js"></script>
+
+    <script src="js/bundle.js"></script>
+
+    <link href="css/style.css" rel="stylesheet"/>
 
 </head>
 
 <body>
 
-<div id="ui">
-	<div id="playerOneInfo" class="infoArea">
-		<label class="playerLabel">Player 1</label>
-		
-		<div class="remainingPieces">
-			Pieces Left: <label>9</label>
-		</div>
-		
-	</div>
-	
-	<div id="otherInfo">
-		
-		<label id="currentPlayer"></label>
-		<br>
-		<label id="flying"></label>
-		
-	</div>
-	
-	
-	<div id="playerTwoInfo"  class="infoArea">
-		<label class="playerLabel">Player 2</label>
-		
-		<div class="remainingPieces">
-			Pieces Left: <label>9</label>
-		</div>
-		
-		
-	</div>
-	
-</div>
+    <div id="ui">
+        <div id="player-info-one" class="info-area">
+            <label class="player-label">Player 1</label>
+
+            <div class="remainingPieces">
+                Pieces Left: <label>9</label>
+            </div>
+
+        </div>
+
+        <div id="other-info">
+
+            <label id="currentPlayer"></label>
+            <br>
+            <label id="flying"></label>
+
+        </div>
 
 
-<div class="playArea">
-	<div id="player1PieceArea" class="playerPieceArea"></div>
-	
-	<div id="board" class="board">
-	
-	
-	</div>
-	
-	<div id="player2PieceArea" class="playerPieceArea"></div>
-</div>
+        <div id="player-info-two" class="info-area">
+            <label class="player-label">Player 2</label>
 
-<div id="graveyards">
-	<div id="graveDivider">	</div>
-</div>
+            <div class="remainingPieces">
+                Pieces Left: <label>9</label>
+            </div>
 
-<div id="menuCont">
-	<div id="screenStart" class="menuWrap">
-		
-		<div class="menuText">
-			Nine Men's Morris
-		</div>
-		<br>
-		<div id="playerChoiceWrap">
-			
-			<div id="gameModeText">Player vs. Player</div>
-			
-			<label><input id="checkAI" type="checkbox" />AI</label>
-			<br><br>
-			<button id="startGame">Start!</button>
-			
-		</div>
-		
-	</div>
-	
-	<div id="gameOver" class="menuWrap">
-		<div class="menuText">
-			Game Over
-		</div>
-		
-		<div id="winnerText">
-			Winner
-		</div>
-		
-		<input type="button" id="restartButton" value="Restart?"/>
-	</div>
-</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="play-area">
+        <div id="player1PieceArea" class="player-piece-area"></div>
+
+        <div id="board" class="board">
+
+
+        </div>
+
+        <div id="player2PieceArea" class="player-piece-area"></div>
+    </div>
+
+    <div id="graveyards">
+        <div id="grave-divider"></div>
+    </div>
+
+    <div id="menu-cont">
+        <div id="screenStart" class="menu-wrap">
+
+            <div class="menuText">
+                Nine Men's Morris
+            </div>
+            <br>
+            <div id="playerChoiceWrap">
+
+                <div id="gameModeText">Player vs. Player</div>
+
+                <label><input id="checkAI" type="checkbox"/>AI</label>
+                <br><br>
+                <button id="startGame">Start!</button>
+
+            </div>
+
+        </div>
+
+        <div id="game-over" class="menu-wrap">
+            <div class="menuText">
+                Game Over
+            </div>
+
+            <div id="winnerText">
+                Winner
+            </div>
+
+            <input type="button" id="restart-button" value="Restart?"/>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -57,7 +57,7 @@
 	        startGame();
 	    });
 
-	    $("#restartButton").on('click', function () {
+	    $("#restart-button").on('click', function () {
 	        location.reload();
 	    });
 
@@ -71,7 +71,7 @@
 
 	function startGame() {
 	    if (mode === 1) {
-	        $("#playerTwoInfo .playerLabel").html("Computer");
+	        $("#player-info-two .player-label").html("Computer");
 	    }
 	    game = new _game2.default(mode);
 	}
@@ -931,7 +931,7 @@
 	        this.game = gameObj;
 	        $('#screenStart').hide();
 	        $('#gameOver').show();
-	        $('#menuCont').hide();
+	        $('#menu-cont').hide();
 	        this.removingPiece = false;
 
 	        this.generateUIElements();
@@ -1171,7 +1171,7 @@
 
 	                var center = GameView.PIECE_AREA_WIDTH / 2;
 	                if (i === 1) {
-	                    // Adjust center to second playerPieceArea.
+	                    // Adjust center to second player-piece-area.
 	                    center += GameView.BOARD_WIDTH + GameView.PIECE_AREA_WIDTH;
 	                }
 
@@ -1275,8 +1275,8 @@
 	    }, {
 	        key: 'updateUI',
 	        value: function updateUI() {
-	            $("#playerOneInfo > .remainingPieces > label").html(this.game.player1.activePieces.length);
-	            $("#playerTwoInfo > .remainingPieces > label").html(this.game.player2.activePieces.length);
+	            $("#player-info-one > .remainingPieces > label").html(this.game.player1.activePieces.length);
+	            $("#player-info-two > .remainingPieces > label").html(this.game.player2.activePieces.length);
 
 	            var currentPlayer = this.game.activePlayer === this.game.player1 ? "Player 1" : "Player 2";
 	            if (currentPlayer === "Player 2" && this.game.mode === 1) {
@@ -1296,7 +1296,7 @@
 	        key: 'gameOver',
 	        value: function gameOver() {
 	            this.boardPaper.remove();
-	            $('#menuCont').show();
+	            $('#menu-cont').show();
 	            // display "GAME OVER"
 	            // display winner ("Player 1" or "Player 2")
 	            // unhide restart button

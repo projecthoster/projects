@@ -5,7 +5,7 @@ $(function () {
         startGame();
     });
 
-    $("#restartButton").on('click', function () {
+    $("#restart-button").on('click', function () {
         location.reload();
     });
 
@@ -19,7 +19,7 @@ var mode = 0;
 
 function startGame() {
     if (mode === 1) {
-        $("#playerTwoInfo .playerLabel").html("Computer");
+        $("#player-info-two .player-label").html("Computer");
     }
     game = new Game(mode);
 }
