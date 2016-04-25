@@ -1,4 +1,3 @@
-// AI Class
 import Game from './game';
 
 export default class AI {

@@ -1,4 +1,3 @@
-
 export default class Line {
     constructor() {
         this.points = [];

@@ -1,4 +1,3 @@
-
 export default class Color {
     constructor(hexName) {
         this.hex = hexName;

@@ -9,9 +9,6 @@ export default class GameView {
         $('#menuCont').hide();
         this.removingPiece = false;
 
-        // start screen
-
-
         this.generateUIElements();
 
         this.graveyards = {
@@ -81,7 +78,7 @@ export default class GameView {
             }
 
             if (this.game.phase === Game.PHASE_1) {
-                var valid = this.game.moveActivePieceToPoint(clickedElement.point);
+                let valid = this.game.moveActivePieceToPoint(clickedElement.point);
 
                 if (valid) {
                     if (this.game.board.checkLines(clickedElement.point)) {  // successful line by active player
@@ -92,7 +89,7 @@ export default class GameView {
                     }
                 }
             } else if (this.game.phase === Game.PHASE_2) {
-                var valid = this.game.moveActivePieceToPoint(clickedElement.point);
+                let valid = this.game.moveActivePieceToPoint(clickedElement.point);
                 console.log(this.game.board.points.indexOf(clickedElement.point));
 
                 if (valid) {
@@ -151,20 +148,19 @@ export default class GameView {
     };
 
     createLines() {
-        var that = this;
         var totalPointRadius = GameView.POINT_RADIUS + GameView.POINT_STROKE;
-        var drawRect = function (point1, point2) {
+        var drawRect = (point1, point2) => {
             var xyOffset = 2;
             var horzHeight = 4;
             var vertWidth = 4;
             if (point1.x == point2.x) {  // vertical line
-                return that.boardPaper.rect(
+                return this.boardPaper.rect(
                     point1.x - xyOffset,
                     point1.y - xyOffset + totalPointRadius,
                     vertWidth,
                     (point2.y + xyOffset) - (point1.y - xyOffset) - 2 * totalPointRadius);
             } else {  // horizontal line
-                return that.boardPaper.rect(
+                return this.boardPaper.rect(
                     point1.x - xyOffset + totalPointRadius,
                     point1.y - xyOffset,
                     (point2.x + xyOffset) - (point1.x - xyOffset) - 2 * totalPointRadius,
@@ -261,9 +257,7 @@ export default class GameView {
             }
 
             var player = players[i];
-            for (var j in player.pieces) {
-                var piece = player.pieces[j];
-
+            for (var piece of player.pieces) {
                 piece.setDomRef(this.boardPaper.circle(center, fromTop, GameView.PIECE_RADIUS));
                 piece.getDomRef().piece = piece;
                 piece.getDomRef().attr("fill", player.getColor());
@@ -286,10 +280,8 @@ export default class GameView {
         }
 
         var players = [this.game.player1, this.game.player2];
-        for (var i in players) {
-            var player = players[i];
-            for (var j in player.pieces) {
-                var piece = player.pieces[j];
+        for (var player of players) {
+            for (var piece of player.pieces) {
                 piece.setHighlighted(false);
             }
         }

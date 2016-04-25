@@ -1,5 +1,3 @@
-// Javascript Document
-
 import AI from './ai';
 import Board from './board';
 import GameView from './game-view';
@@ -42,7 +40,7 @@ export default class Game {
                 console.log('Entering phase II');
                 this.phase = Game.PHASE_2;
             }
-        } else if (this.phase == Game.PHASE_2) {
+        } else if (this.phase === Game.PHASE_2) {
             this.activePlayer = (this.activePlayer === this.player1) ? this.player2 : this.player1;
 
             // TODO: check activePlayer's piece's for possible moves. GAME OVER - not active player wins
@@ -63,7 +61,7 @@ export default class Game {
     };
 
     moveActivePieceToPoint(point) {
-        if (this.phase == Game.PHASE_2) {
+        if (this.phase === Game.PHASE_2) {
             if (!this.activePiece) {
                 return false;
             } else {
@@ -78,7 +76,7 @@ export default class Game {
     };
 
     getNotActivePlayer() {
-        if (this.activePlayer == this.player1) {
+        if (this.activePlayer === this.player1) {
             return this.player2;
         } else {
             return this.player1;

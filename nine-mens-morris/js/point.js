@@ -1,5 +1,3 @@
-// Javascript Document
-
 export default class Point {
     constructor() {
         this.domRef = null; // Set by GameView

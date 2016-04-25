@@ -1,5 +1,3 @@
-// Javascript Document
-
 import Point from './point';
 import Line from './line';
 

@@ -1,9 +1,5 @@
 import Game from './game';
 
-var game;
-var mode = 0;
-var testing = false;
-
 $(function () {
     $("#startGame").on('click', function () {
         startGame();
@@ -18,6 +14,8 @@ $(function () {
     });
 });
 
+var game;
+var mode = 0;
 
 function startGame() {
     if (mode === 1) {
