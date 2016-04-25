@@ -52,10 +52,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var game;
-	var mode = 0;
-	var testing = false;
-
 	$(function () {
 	    $("#startGame").on('click', function () {
 	        startGame();
@@ -69,6 +65,9 @@
 	        changeGameMode();
 	    });
 	});
+
+	var game;
+	var mode = 0;
 
 	function startGame() {
 	    if (mode === 1) {
@@ -98,7 +97,7 @@
 	    value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // Javascript Document
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _ai = __webpack_require__(2);
 
@@ -162,7 +161,7 @@
 	                    console.log('Entering phase II');
 	                    this.phase = Game.PHASE_2;
 	                }
-	            } else if (this.phase == Game.PHASE_2) {
+	            } else if (this.phase === Game.PHASE_2) {
 	                this.activePlayer = this.activePlayer === this.player1 ? this.player2 : this.player1;
 
 	                // TODO: check activePlayer's piece's for possible moves. GAME OVER - not active player wins
@@ -185,7 +184,7 @@
 	    }, {
 	        key: 'moveActivePieceToPoint',
 	        value: function moveActivePieceToPoint(point) {
-	            if (this.phase == Game.PHASE_2) {
+	            if (this.phase === Game.PHASE_2) {
 	                if (!this.activePiece) {
 	                    return false;
 	                } else {
@@ -201,7 +200,7 @@
 	    }, {
 	        key: 'getNotActivePlayer',
 	        value: function getNotActivePlayer() {
-	            if (this.activePlayer == this.player1) {
+	            if (this.activePlayer === this.player1) {
 	                return this.player2;
 	            } else {
 	                return this.player1;
@@ -240,8 +239,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } // AI Class
-
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var AI = function AI(gameObj, viewObj) {
 	    _classCallCheck(this, AI);
@@ -546,7 +544,7 @@
 	    value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // Javascript Document
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _point = __webpack_require__(4);
 
@@ -705,8 +703,6 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	// Javascript Document
 
 	var Point = function () {
 	    function Point() {
@@ -938,8 +934,6 @@
 	        $('#menuCont').hide();
 	        this.removingPiece = false;
 
-	        // start screen
-
 	        this.generateUIElements();
 
 	        this.graveyards = {
@@ -1019,10 +1013,10 @@
 	                        }
 	                    }
 	                } else if (this.game.phase === _game2.default.PHASE_2) {
-	                    var valid = this.game.moveActivePieceToPoint(clickedElement.point);
+	                    var _valid = this.game.moveActivePieceToPoint(clickedElement.point);
 	                    console.log(this.game.board.points.indexOf(clickedElement.point));
 
-	                    if (valid) {
+	                    if (_valid) {
 	                        if (this.game.board.checkLines(clickedElement.point)) {
 	                            // successful line by active player
 	                            this.removingPiece = true;
@@ -1076,7 +1070,8 @@
 	    }, {
 	        key: 'createLines',
 	        value: function createLines() {
-	            var that = this;
+	            var _this = this;
+
 	            var totalPointRadius = GameView.POINT_RADIUS + GameView.POINT_STROKE;
 	            var drawRect = function drawRect(point1, point2) {
 	                var xyOffset = 2;
@@ -1084,10 +1079,10 @@
 	                var vertWidth = 4;
 	                if (point1.x == point2.x) {
 	                    // vertical line
-	                    return that.boardPaper.rect(point1.x - xyOffset, point1.y - xyOffset + totalPointRadius, vertWidth, point2.y + xyOffset - (point1.y - xyOffset) - 2 * totalPointRadius);
+	                    return _this.boardPaper.rect(point1.x - xyOffset, point1.y - xyOffset + totalPointRadius, vertWidth, point2.y + xyOffset - (point1.y - xyOffset) - 2 * totalPointRadius);
 	                } else {
 	                    // horizontal line
-	                    return that.boardPaper.rect(point1.x - xyOffset + totalPointRadius, point1.y - xyOffset, point2.x + xyOffset - (point1.x - xyOffset) - 2 * totalPointRadius, horzHeight);
+	                    return _this.boardPaper.rect(point1.x - xyOffset + totalPointRadius, point1.y - xyOffset, point2.x + xyOffset - (point1.x - xyOffset) - 2 * totalPointRadius, horzHeight);
 	                }
 	            };
 
@@ -1181,18 +1176,37 @@
 	                }
 
 	                var player = players[i];
-	                for (var j in player.pieces) {
-	                    var piece = player.pieces[j];
+	                var _iteratorNormalCompletion = true;
+	                var _didIteratorError = false;
+	                var _iteratorError = undefined;
 
-	                    piece.setDomRef(this.boardPaper.circle(center, fromTop, GameView.PIECE_RADIUS));
-	                    piece.getDomRef().piece = piece;
-	                    piece.getDomRef().attr("fill", player.getColor());
-	                    piece.getDomRef().attr("stroke-width", 2);
-	                    piece.getDomRef().mousedown(function () {
-	                        that.inputReceived(this);
-	                    });
+	                try {
+	                    for (var _iterator = player.pieces[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                        var piece = _step.value;
 
-	                    fromTop += GameView.PIECE_RADIUS + 5;
+	                        piece.setDomRef(this.boardPaper.circle(center, fromTop, GameView.PIECE_RADIUS));
+	                        piece.getDomRef().piece = piece;
+	                        piece.getDomRef().attr("fill", player.getColor());
+	                        piece.getDomRef().attr("stroke-width", 2);
+	                        piece.getDomRef().mousedown(function () {
+	                            that.inputReceived(this);
+	                        });
+
+	                        fromTop += GameView.PIECE_RADIUS + 5;
+	                    }
+	                } catch (err) {
+	                    _didIteratorError = true;
+	                    _iteratorError = err;
+	                } finally {
+	                    try {
+	                        if (!_iteratorNormalCompletion && _iterator.return) {
+	                            _iterator.return();
+	                        }
+	                    } finally {
+	                        if (_didIteratorError) {
+	                            throw _iteratorError;
+	                        }
+	                    }
 	                }
 	            }
 	        }
@@ -1205,11 +1219,50 @@
 	            }
 
 	            var players = [this.game.player1, this.game.player2];
-	            for (var i in players) {
-	                var player = players[i];
-	                for (var j in player.pieces) {
-	                    var piece = player.pieces[j];
-	                    piece.setHighlighted(false);
+	            var _iteratorNormalCompletion2 = true;
+	            var _didIteratorError2 = false;
+	            var _iteratorError2 = undefined;
+
+	            try {
+	                for (var _iterator2 = players[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                    var player = _step2.value;
+	                    var _iteratorNormalCompletion3 = true;
+	                    var _didIteratorError3 = false;
+	                    var _iteratorError3 = undefined;
+
+	                    try {
+	                        for (var _iterator3 = player.pieces[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	                            var piece = _step3.value;
+
+	                            piece.setHighlighted(false);
+	                        }
+	                    } catch (err) {
+	                        _didIteratorError3 = true;
+	                        _iteratorError3 = err;
+	                    } finally {
+	                        try {
+	                            if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	                                _iterator3.return();
+	                            }
+	                        } finally {
+	                            if (_didIteratorError3) {
+	                                throw _iteratorError3;
+	                            }
+	                        }
+	                    }
+	                }
+	            } catch (err) {
+	                _didIteratorError2 = true;
+	                _iteratorError2 = err;
+	            } finally {
+	                try {
+	                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                        _iterator2.return();
+	                    }
+	                } finally {
+	                    if (_didIteratorError2) {
+	                        throw _iteratorError2;
+	                    }
 	                }
 	            }
 
@@ -1468,8 +1521,6 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	// Javascript Document
 
 	var Piece = function () {
 	    function Piece(player) {
